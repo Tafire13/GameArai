@@ -12,13 +12,7 @@ public class Server {
                System.out.println("Client connected");
                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-               String inputLine;
-               while((inputLine = in.readLine()) != null){
-                   System.out.println(inputLine);
-                   out.println(inputLine);
-               }
-               in.close();
-               out.close();
+               out.println("Hello from server"+new java.util.Date());
                socket.close();
            }
         }
@@ -26,4 +20,4 @@ public class Server {
             System.err.println(ioe);
         }
     }
-} 
+}
